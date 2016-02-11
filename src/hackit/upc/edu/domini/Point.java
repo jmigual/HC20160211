@@ -20,4 +20,9 @@ public class Point {
         x = -1;
         y = -1;
     }
+
+    public Point(Integer x, Integer y){
+        this.x = x;
+        this.y = y;
+    }
 }

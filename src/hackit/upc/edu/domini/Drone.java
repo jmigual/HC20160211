@@ -7,7 +7,22 @@ import java.util.HashMap;
  */
 public class Drone {
 
-    private static int capacity;
-    private HashMap<ProductType, Integer> inventory;
-    private Point position;
+    private static int capacity = 0;
+    private HashMap<ProductType, Integer> inventory = new HashMap<>();
+    private Point position = new Point();
+    private Command currentCommand = Command.WAIT;
+
+    public Drone() {
+
+    }
+
+    public Drone(Point pos) {
+        this.position = pos;
+    }
+
+    public static void setCapacity(int value) {
+        capacity = value;
+    }
+
+    public void addToInventory()
 }

@@ -21,8 +21,9 @@ public class Point {
         return limits;
     }
 
-    public static void setLimits(Point limits) {
-        Point.limits = limits;
+    public static void setLimits(int x, int y) {
+        Point.limits.x = x;
+        Point.limits.y = y;
     }
 
     public Point(){

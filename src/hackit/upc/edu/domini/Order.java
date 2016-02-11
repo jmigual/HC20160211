@@ -6,11 +6,14 @@ package hackit.upc.edu.domini;
 public class Order{
     private Point destination;
     public Inventory inventory;
+    public int puntuation;
 
     public Order(Point destination, Inventory inventory){
         this.destination = destination;
         this.inventory = inventory;
+        puntuation = -1;
     }
+
 
     public Point getDestination(){
         return destination;
@@ -19,4 +22,6 @@ public class Order{
     public void setDestination(Point d){
         destination = d;
     }
+
+
 }

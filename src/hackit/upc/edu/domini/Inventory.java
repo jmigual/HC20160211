@@ -16,7 +16,34 @@ public class Inventory {
         this.items = items;
     }
 
-    public void addItem(ProductType type) {
+    public void addProduct(ProductType type) {
+        addProduct(type, 1);
+    }
+    
+    public void addProduct(ProductType type, int quantity) {
+        if (items.containsKey(type)) {
+            items.put(type, items.get(type) + quantity);
+        }
+        else items.put(type, quantity);
+    }
 
+    public void removeProduct(ProductType type) {
+        removeProduct(type, 1);
+    }
+
+    public void removeProduct(ProductType type, int quantity) {
+        if (items.containsKey(type)) {
+            Integer val = items.get(type);
+            items.put(type, (val - quantity) < 0 ? 0 : val - quantity);
+        }
+        else items.put(type, 0);
+    }
+
+    public void setProduct(ProductType type, int quantity) {
+        items.put(type, quantity);
+    }
+
+    public Integer getProduct(ProductType type) {
+        return items.get(type);
     }
 }

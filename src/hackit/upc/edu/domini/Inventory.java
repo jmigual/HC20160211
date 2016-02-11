@@ -1,5 +1,6 @@
 package hackit.upc.edu.domini;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -7,7 +8,7 @@ import java.util.HashMap;
  */
 public class Inventory {
     private HashMap<ProductType, Integer> items;
-
+    public ArrayList<Product> invAlgorithm;
     public Inventory() {
         items = new HashMap<>();
     }
@@ -45,5 +46,15 @@ public class Inventory {
 
     public Integer getProduct(ProductType type) {
         return items.get(type);
+    }
+
+    public void setInvAlgorithm(Inventory inv){
+        invAlgorithm = new ArrayList<Product>();
+        for(ProductType p : items.keySet()){
+            int k = items.get(p);
+            for(int i = 0; i < k; ++i){
+                invAlgorithm.add(new Product(p));
+            }
+        }
     }
 }

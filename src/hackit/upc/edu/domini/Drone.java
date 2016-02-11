@@ -8,7 +8,7 @@ public class Drone {
     private static int capacity = 0;
     private Inventory inventory;
     private Point position = new Point();
-    private Command currentCommand = Command.WAIT;
+    private CommandType currentCommandType = CommandType.WAIT;
 
     public Drone() {
         this.inventory = new Inventory();
@@ -17,6 +17,7 @@ public class Drone {
     public Drone(Point pos) {
         this.position = pos;
         this.inventory = new Inventory();
+        inventory = new Inventory();
     }
     public Drone(Point pos, Inventory inventory) {
         this.position = pos;
@@ -31,12 +32,12 @@ public class Drone {
         capacity = value;
     }
 
-    public Command getCurrentCommand() {
-        return currentCommand;
+    public CommandType getCurrentCommandType() {
+        return currentCommandType;
     }
 
-    public void setCurrentCommand(Command currentCommand) {
-        this.currentCommand = currentCommand;
+    public void setCurrentCommandType(CommandType currentCommandType) {
+        this.currentCommandType = currentCommandType;
     }
 
     public Point getPosition() {

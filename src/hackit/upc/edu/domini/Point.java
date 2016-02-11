@@ -7,7 +7,7 @@ package hackit.upc.edu.domini;
 public class Point {
     public Integer x;
     public Integer y;
-    private static Point limits;
+    private static Point limits = new Point();
 
     public static Integer distance(Point a, Point b){
         int distance;
@@ -32,6 +32,12 @@ public class Point {
     }
 
     public Point(Integer x, Integer y) throws Exception{
+        if (limits == null) {
+            this.x = x;
+            this.y = y;
+            return;
+        }
+
         if(x < limits.x && x >= 0) this.x = x;
         else throw new Exception("Limits");
         if(y < limits.y && y >= 0) this.y = y;

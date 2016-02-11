@@ -1,5 +1,7 @@
 package hackit.upc.edu.domini;
 
+import hackit.upc.edu.presentacio.InputReader;
+
 import java.util.ArrayList;
 
 /**
@@ -16,10 +18,10 @@ public class Algorithm {
 
     public Algorithm(InputReader inputReader){
         this.inputReader = inputReader;
-        warehouses = inputReader;
+        /*warehouses = inputReader;
         drones = inputReader;
         orders = inputReader;
-        maxTurn = inputReader;
+        maxTurn = inputReader;*/
         turn = 0;
         commands = new ArrayList<>();
     }

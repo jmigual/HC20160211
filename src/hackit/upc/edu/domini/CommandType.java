@@ -3,7 +3,7 @@ package hackit.upc.edu.domini;
 /**
  * Created by Joan on 11/02/2016.
  */
-public enum Command {
+public enum CommandType {
     LOAD('L'),
     DELIVER('D'),
     UNLOAD('U'),
@@ -11,7 +11,7 @@ public enum Command {
 
     private Character letter;
 
-    Command(Character letter) {
+    CommandType(Character letter) {
         this.letter = letter;
     }
 

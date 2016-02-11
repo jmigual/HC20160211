@@ -9,7 +9,7 @@ public class Drone {
     private int ID;
     private Inventory inventory;
     private Point position = new Point();
-    private Command currentCommand = Command.WAIT;
+    private CommandType currentCommandType = CommandType.WAIT;
 
     public Drone() {
         this.ID = -1;
@@ -25,6 +25,7 @@ public class Drone {
         this.ID = ID;
         this.position = pos;
         this.inventory = new Inventory();
+        inventory = new Inventory();
     }
     public Drone(int ID, Point pos, Inventory inventory) {
         this.ID = ID;
@@ -40,12 +41,12 @@ public class Drone {
         maxLoad = value;
     }
 
-    public Command getCurrentCommand() {
-        return currentCommand;
+    public CommandType getCurrentCommandType() {
+        return currentCommandType;
     }
 
-    public void setCurrentCommand(Command currentCommand) {
-        this.currentCommand = currentCommand;
+    public void setCurrentCommandType(CommandType currentCommandType) {
+        this.currentCommandType = currentCommandType;
     }
 
     public Point getPosition() {

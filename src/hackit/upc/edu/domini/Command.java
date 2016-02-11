@@ -11,7 +11,9 @@ public enum Command {
 
     private Character letter;
 
-    Command(Character letter) { this.letter = letter; }
+    Command(Character letter) {
+        this.letter = letter;
+    }
 
     @Override
     public String toString() {

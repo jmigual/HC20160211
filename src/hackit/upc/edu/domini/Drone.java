@@ -1,5 +1,10 @@
 package hackit.upc.edu.domini;
 
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 /**
  * Created by Joan on 11/02/2016.
  */
@@ -8,10 +13,11 @@ public class Drone {
     private static int capacity = 0;
     private Inventory inventory;
     private Point position = new Point();
-    private CommandType currentCommandType = CommandType.WAIT;
+    public LinkedBlockingQueue<Command> commands;
 
     public Drone() {
         this.inventory = new Inventory();
+        commands = new LinkedBlockingQueue<>();
     }
 
     public Drone(Point pos) {
@@ -30,14 +36,6 @@ public class Drone {
 
     public static void setCapacity(int value) {
         capacity = value;
-    }
-
-    public CommandType getCurrentCommandType() {
-        return currentCommandType;
-    }
-
-    public void setCurrentCommandType(CommandType currentCommandType) {
-        this.currentCommandType = currentCommandType;
     }
 
     public Point getPosition() {

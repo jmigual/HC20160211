@@ -1,6 +1,7 @@
 package hackit.upc.edu.domini;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by aleix on 11/02/2016.
@@ -32,6 +33,10 @@ public class Algorithm {
 
     }
 
+    public Warehouse warehouseAfter(){
+        return new Warehouse(new Point());
+    }
+
     public void Work(){
         while(turn < maxTurn) {
             deliveriesPuntuation();
@@ -40,8 +45,10 @@ public class Algorithm {
                 int i = 0;
                 for(Drone dr : w.drones){
                     Product prod = w.inventory.invAlgorithm.get(i);
-                    dr.setCurrentCommandType();
-                    commandTypes.add(CommandType.LOAD);
+                    HashMap<ProductType, Integer> hashmap = new HashMap<ProductType, Integer>();
+                    hashmap.put(prod.productType, Math.max(w.inventory.getProduct(prod.productType), prod.order.inventory.getProduct(prod.productType)));
+                    dr.commands.add(new Command(new Point(),warehouseAfter(), CommandType.LOAD,
+                            new Inventory(hashmap))
 
                 }
             }

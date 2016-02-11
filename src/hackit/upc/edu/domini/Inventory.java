@@ -17,6 +17,6 @@ public class Inventory {
     }
 
     public void addItem(ProductType type) {
-        
+
     }
 }

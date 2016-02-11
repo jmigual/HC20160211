@@ -42,7 +42,7 @@ public class Algorithm {
                 int i = 0;
                 for(Drone dr : w.drones){
                     Product prod = w.inventory.invAlgorithm.get(i);
-                    //dr.setCurrentCommandType();
+                    dr.setCurrentCommandType();
                     commandTypes.add(CommandType.LOAD);
 
                 }

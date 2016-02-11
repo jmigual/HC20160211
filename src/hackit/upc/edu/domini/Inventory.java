@@ -20,7 +20,7 @@ public class Inventory {
     public void addProduct(ProductType type) {
         addProduct(type, 1);
     }
-    
+
     public void addProduct(ProductType type, int quantity) {
         if (items.containsKey(type)) {
             items.put(type, items.get(type) + quantity);
@@ -56,5 +56,9 @@ public class Inventory {
                 invAlgorithm.add(new Product(p));
             }
         }
+    }
+
+    public void setAll(HashMap<ProductType, Integer> items) {
+        this.items = items;
     }
 }
